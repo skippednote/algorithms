@@ -1,0 +1,32 @@
+Hash tables
+===
+
+- Hash table is used when there is a one-to-one relationship.
+- Hash table has key, value pairs where you provide a key and it give back the value.
+- Hash tables are based on arrays (and in some cases nested linked list) and hash functions.
+- Hash tables start with an array of fixed size.
+- Hash table is O(1) in average and best case.
+- Hash table is O(n) in worst case.
+- Hash tables are fast at insertion, deletion and search.
+- Hash functions
+  - Hash function takes a string and returns a number.
+  - Hash function always returns the same number for the same string.
+  - Hash function doesn't save the same two strings on same slot.
+  - Hash function nests a linked list inside an array if there are multiple items for the same slot. This is to prevent duplication as well.
+- Most of the programming applications implement Hash tables by default (dicts, objects, maps, hashmaps).
+- Hash tables are used in almost every program you write.
+  - It's used for looking up values.
+  - Caching
+- Collision
+  - If the Hash tables stores values from a-z and there are two values starting with 'a', it will create a linked list in that slot.
+  - Finding the slot is fast but searching in the linked list can be slow if there are too many items.
+  - To avoid Collision and improve performance you need to: Decrease load factor and use a good hash function.
+- Load factor
+  - Load factor is calculated by dividing `number of items in the hash table` by `total number of slots`.
+  - It decrease Load factor you need to resize the array making it twice it's size.
+    - Even though resizing an array is slow, it doesn't have any major implecations on performance.
+    - Increase the size of an array once load factor is 0.7 or more.
+- Good hash function
+  - A good hash function should evenly distribute values in an array.
+  - A bad hash function would group a lot of values together which makes it slow at lookup.
+  - You usually don't need to worry about this as it's implemented by a programming language internally.
